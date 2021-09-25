@@ -1,12 +1,13 @@
 #include <iostream>
 
-#define ODEFAULT "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
+#define NO_INPUT "* LOUD AND UNBEARABLE FEEDBACK NOISE *"
 
 int main(int ac, char *av[])
 {
 	if (ac == 1)
 	{
-		std::cout << ODEFAULT << std::endl;
+		std::cout << NO_INPUT;
+		std::cout << std::endl;
 	}
 	else
 	{
