@@ -1,12 +1,5 @@
-#include <iostream>
+#include "phonebook.hpp"
 
-struct	contact{
-	std::string firstName;
-	std::string lastName
-	std::string nickName;
-	std::string phoneNumber;
-	std::string darkestSecret;
-}
 class	Head{
 };
 
