@@ -12,14 +12,20 @@ struct	Contact{
 };
 
 class	PhoneBook{
-	struct Contact contactList[MAX_CONTACT];
+	struct Contact phoneBook[MAX_CONTACT];
 public:
 	void	addContact(void);
-	void	printContact(void);
+	void	printAvailableContact(void);
+	void	printPickedIndex(void);
 	int	findFreeIndex(void);
 };
 
-void	printString(std::string String, int newline);
-bool	getContactFromUser(struct Contact &contact);
+void	printString(std::string, bool);
+bool	getContactFromUser(struct Contact &);
+void	printContactForSearch(int index, struct Contact);
+void	printSpace(int);
+void	printContactField(std::string);
+int	getContactIndexFromUser(void);
+void	printContact(struct Contact);
 
 #endif

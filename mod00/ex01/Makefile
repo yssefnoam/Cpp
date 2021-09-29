@@ -1,10 +1,12 @@
-NAME = PhoneBook
+NAME = phonebook
 SRC = *.cpp
+#DBG = -g -fsanitize=address
+
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	g++ -Wall -Wextra -Werror -o $(NAME) $(SRC)
+	g++ $(DBG) -Wall -Wextra -Werror -o $(NAME) $(SRC)
 
 clean:
 	rm -fr $(NAME)

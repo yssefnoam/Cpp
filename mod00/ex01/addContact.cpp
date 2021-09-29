@@ -4,7 +4,6 @@ void	PhoneBook::addContact(void) {
 	bool error;
 	int index;
 	struct Contact contact;
-	
 
 	error = getContactFromUser(contact);
 	if (error == false)
@@ -13,19 +12,10 @@ void	PhoneBook::addContact(void) {
 		return ;
 	}
 	index = this->findFreeIndex();
-	if (index == -1)
-	{
-		this->contactList[0].firstName = contact.firstName;
-		this->contactList[0].lastName = contact.lastName;
-		this->contactList[0].nickName = contact.nickName;
-		this->contactList[0].phoneNumber = contact.phoneNumber;
-		this->contactList[0].darkestSecret = contact.darkestSecret;
-		return;
-	}
-	this->contactList[0].firstName = contact.firstName;
-	this->contactList[0].lastName = contact.lastName;
-	this->contactList[0].nickName = contact.nickName;
-	this->contactList[0].phoneNumber = contact.phoneNumber;
-	this->contactList[0].darkestSecret = contact.darkestSecret;
+	this->phoneBook[index].firstName = contact.firstName;
+	this->phoneBook[index].lastName = contact.lastName;
+	this->phoneBook[index].nickName = contact.nickName;
+	this->phoneBook[index].phoneNumber = contact.phoneNumber;
+	this->phoneBook[index].darkestSecret = contact.darkestSecret;
 	return;
 }

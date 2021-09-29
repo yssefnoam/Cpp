@@ -7,13 +7,14 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "Enter a command (ADD,SEARCH,EXIT): ";
+		printString("Enter a command (ADD,SEARCH,EXIT): ", false);
 		std::cin >> command;
 		if (command == "ADD") {
 			phoneBook.addContact();
 		}
 		else if (command == "SEARCH") {
-
+			phoneBook.printAvailableContact();
+			phoneBook.printPickedIndex();
 		}
 		else if (command == "EXIT") {
 			std::cout << "Bye.\n";
