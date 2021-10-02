@@ -4,10 +4,12 @@ int	getContactIndexFromUser(void)
 {
 	int index;
 
-	do	{
-		printString("Enter Index[0-7]", true);
+	do {
+		eofReached();
+		printString("Enter Index(0-7):", true);
 		std::cin.clear();
-	}while (!(std::cin >> index));
+		std::cin.ignore(10000, '\n');
+	} while(!(std::cin >> index) || !(index <= 7 && index >= 0));
 
 	return index;
 }

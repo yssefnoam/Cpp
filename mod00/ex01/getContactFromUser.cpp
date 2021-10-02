@@ -2,7 +2,11 @@
 
 bool getContactFromUser(struct Contact &contact)
 {
-	std::cin >> contact.firstName >> contact.lastName >> contact.nickName >> contact.phoneNumber >> contact.darkestSecret;
+	std::cin >> contact.firstName;
+	std::cin >> contact.lastName;
+	std::cin >> contact.nickName;
+	std::cin >> contact.phoneNumber;
+	std::cin >> contact.darkestSecret;
 	if (std::cin.fail())
 	{
 		std::cin.clear();

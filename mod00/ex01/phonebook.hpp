@@ -27,5 +27,6 @@ void	printSpace(int);
 void	printContactField(std::string);
 int	getContactIndexFromUser(void);
 void	printContact(struct Contact);
+void    eofReached(void);
 
 #endif

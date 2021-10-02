@@ -17,5 +17,6 @@ void	PhoneBook::addContact(void) {
 	this->phoneBook[index].nickName = contact.nickName;
 	this->phoneBook[index].phoneNumber = contact.phoneNumber;
 	this->phoneBook[index].darkestSecret = contact.darkestSecret;
+	printf("contact ADD\n");
 	return;
 }

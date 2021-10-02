@@ -7,8 +7,13 @@ int main(void)
 
 	while (1)
 	{
-		printString("Enter a command (ADD,SEARCH,EXIT): ", false);
-		std::cin >> command;
+		do {
+			eofReached();
+			printString("Enter a command (ADD,SEARCH,EXIT):", true);
+			std::cin.clear();
+			std::cin.ignore(10000, '\n');
+		} while(!(std::cin >> command) || std::cin.eof());
+
 		if (command == "ADD") {
 			phoneBook.addContact();
 		}
