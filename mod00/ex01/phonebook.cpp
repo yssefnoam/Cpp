@@ -7,12 +7,7 @@ int main(void)
 
 	while (1)
 	{
-		do {
-			eofReached();
-			printString("Enter a command (ADD,SEARCH,EXIT):", true);
-			std::cin.clear();
-			std::cin.ignore(10000, '\n');
-		} while(!(std::cin >> command) || std::cin.eof());
+		command = getInput("Enter a command (ADD,SEARCH,EXIT): ");
 
 		if (command == "ADD") {
 			phoneBook.addContact();
@@ -22,7 +17,7 @@ int main(void)
 			phoneBook.printPickedIndex();
 		}
 		else if (command == "EXIT") {
-			std::cout << "Bye.\n";
+			printString("Bye.", true);
 			return 0;
 		}
 	}

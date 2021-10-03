@@ -1,22 +1,26 @@
 #include "phonebook.hpp"
 
 void	PhoneBook::addContact(void) {
-	bool error;
 	int index;
-	struct Contact contact;
+	int i = 0;
+	std::string input;
+	std::string prompt[5] = {
+		"Enter First Name: ",
+		"Enter Last Name: ",
+		"Enter Nick Name: ",
+		"Enter Phone Number: ",
+		"Enter Darkest Secret: ",
 
-	error = getContactFromUser(contact);
-	if (error == false)
-	{
-		printString("Error!", 1);
-		return ;
-	}
+	};
+
 	index = this->findFreeIndex();
-	this->phoneBook[index].firstName = contact.firstName;
-	this->phoneBook[index].lastName = contact.lastName;
-	this->phoneBook[index].nickName = contact.nickName;
-	this->phoneBook[index].phoneNumber = contact.phoneNumber;
-	this->phoneBook[index].darkestSecret = contact.darkestSecret;
-	printf("contact ADD\n");
+	while (i < MAX_CONTACT_FIELD)
+	{
+		do {
+			input = getInput(prompt[i]);
+		} while (input == "");
+		this->phoneBook[index].contactField[i] = input;
+		i++;
+	}
 	return;
 }

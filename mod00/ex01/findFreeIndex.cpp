@@ -7,7 +7,7 @@ int	PhoneBook::findFreeIndex(void)
 
 	while (i < MAX_CONTACT)
 	{
-		String = this->phoneBook[i].firstName;
+		String = this->phoneBook[i].contactField[FIRSTNAME];
 		if (String.empty())
 			return (i);
 		i++;

@@ -2,12 +2,10 @@
 
 void	printContact(struct Contact contact)
 {
-	if (!contact.firstName.empty())
+	int i = 0;
+	if (!contact.contactField[FIRSTNAME].empty())
 	{
-		printString(contact.firstName, true);
-		printString(contact.lastName, true);
-		printString(contact.nickName, true);
-		printString(contact.phoneNumber, true);
-		printString(contact.darkestSecret, true);
+		while (i < MAX_CONTACT_FIELD)
+			printString(contact.contactField[i++], true);
 	}
 }
