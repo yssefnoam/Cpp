@@ -1,12 +1,6 @@
 #include "phonebook.hpp"
 
-void	printSpace(int spaces)
+void	printSpace(void)
 {
-	int i = 0;
-
-	while (i < spaces)
-	{
-		std::cout << " ";
-		i++;
-	}
+	std::cout << std::setw(10);
 }

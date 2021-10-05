@@ -14,6 +14,7 @@
 
 // Include Headers
 #include <iostream>
+#include <iomanip>
 
 
 struct	Contact{
@@ -35,7 +36,7 @@ public:
 
 void		printString(std::string, bool);
 void		printContactForSearch(int index, struct Contact);
-void		printSpace(int);
+void		printSpace(void);
 void		printContactField(std::string);
 int			getContactIndexFromUser(void);
 void		printContact(struct Contact);

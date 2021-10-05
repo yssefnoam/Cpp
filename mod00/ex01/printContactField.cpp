@@ -10,6 +10,6 @@ void	printContactField(std::string String)
 		std::cout << ".";
 		return ;
 	}
-	std::cout << String;
-	printSpace(10 - String.length());
+	printSpace();
+	printString(String, false);
 }
