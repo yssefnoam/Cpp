@@ -1,8 +1,8 @@
-#include "phonebook.hpp"
+#include "functions.hpp"
 
-void	PhoneBook::printPickedIndex(void)
+void	printPickedIndex(PhoneBook& phonebook)
 {
 	int index;
 	index = getContactIndexFromUser();
-	printContact(this->phoneBook[index]);
+	printContact(phonebook.getIndex(index));
 }

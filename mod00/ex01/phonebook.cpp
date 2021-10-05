@@ -1,20 +1,20 @@
-#include "phonebook.hpp"
+#include "functions.hpp"
 
 int main(void)
 {
 	std::string command;
-	PhoneBook phoneBook;
+	PhoneBook phoneBook = PhoneBook();
 
 	while (1)
 	{
 		command = getInput("Enter a command (ADD,SEARCH,EXIT): ");
 
 		if (command == "ADD") {
-			phoneBook.addContact();
+			addContact(phoneBook);
 		}
 		else if (command == "SEARCH") {
-			phoneBook.printAvailableContact();
-			phoneBook.printPickedIndex();
+			printAvailableContact(phoneBook);
+			printPickedIndex(phoneBook);
 		}
 		else if (command == "EXIT") {
 			printString("Bye.", true);

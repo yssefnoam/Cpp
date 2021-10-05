@@ -1,6 +1,6 @@
-#include "phonebook.hpp"
+#include "functions.hpp"
 
-void	PhoneBook::addContact(void) {
+void	addContact(PhoneBook &phonebook) {
 	int index;
 	int i = 0;
 	std::string input;
@@ -10,16 +10,15 @@ void	PhoneBook::addContact(void) {
 		"Enter Nick Name: ",
 		"Enter Phone Number: ",
 		"Enter Darkest Secret: ",
-
 	};
 
-	index = this->findFreeIndex();
+	index = findFreeIndex(phonebook);
 	while (i < MAX_CONTACT_FIELD)
 	{
 		do {
 			input = getInput(prompt[i]);
 		} while (input == "");
-		this->phoneBook[index].contactField[i] = input;
+		phonebook.setIndex(index, i, input);
 		i++;
 	}
 	return;
