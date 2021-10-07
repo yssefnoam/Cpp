@@ -1,13 +1,13 @@
-#include "phonebook.hpp"
+#include "functions.hpp"
 
-void PhoneBook::printAvailableContact(void)
+void printAvailableContact(PhoneBook &phonebook)
 {
 	int i = 0;
 	struct Contact contact;
 
 	while (i < MAX_CONTACT)
 	{
-		contact = this->phoneBook[i];
+		contact = phonebook.getIndex(i);
 		printContactForSearch(i, contact);
 		i++;
 	}

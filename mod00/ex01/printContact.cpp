@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "functions.hpp"
 
 void	printContact(struct Contact contact)
 {

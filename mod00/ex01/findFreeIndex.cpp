@@ -1,16 +1,6 @@
-#include "phonebook.hpp"
 
-int	PhoneBook::findFreeIndex(void)
+#include "functions.hpp"
+int	findFreeIndex(PhoneBook& phonebook)
 {
-	int i = 0;
-	std::string String;
-
-	while (i < MAX_CONTACT)
-	{
-		String = this->phoneBook[i].contactField[FIRSTNAME];
-		if (String.empty())
-			return (i);
-		i++;
-	}
-	return (0);
+	return phonebook.getFreeIndex();
 }
