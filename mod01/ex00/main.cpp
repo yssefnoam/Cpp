@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    Zombie *zombie = newZombie("zombie alocated in heap");
+    Zombie *zombie = newZombie("ynoam");
     zombie->announce();
     randomChump("zombie1");
     randomChump("zombie2");
@@ -13,6 +13,5 @@ int main(void)
     randomChump("zombie6");
     delete zombie;
 
-    while(1);
     return 0;
 }

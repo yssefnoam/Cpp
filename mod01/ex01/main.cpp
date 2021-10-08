@@ -4,8 +4,8 @@
 int main (void)
 {
     Zombie *zombie = zombieHorde(3, "zombie");
-    // zombie[0].announce();
-    // zombie[1].announce();
-    zombie[2].announce();
+    zombie->announce();
+    zombie++;
+    zombie->announce();
     return 0;
 }

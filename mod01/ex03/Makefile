@@ -6,7 +6,7 @@ SRC = *.cpp
 all: $(NAME)
 
 $(NAME): $(SRC)
-	g++ $(DBG) -Wall -Wextra -Werror -std=c++98 -o $(NAME) $(SRC)
+	clang++ $(DBG) -Wall -Wextra -Werror -std=c++98 -o $(NAME) $(SRC)
 
 clean:
 	rm -fr $(NAME)
