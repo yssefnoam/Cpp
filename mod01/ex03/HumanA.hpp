@@ -1,3 +1,5 @@
+#ifndef HUMAN_A_APP
+#define HUMAN_A_APP
 #include <iostream>
 #include "Weapon.hpp"
 
@@ -11,3 +13,5 @@ public:
     HumanA(std::string, Weapon);
     void attack(void);
 };
+
+#endif

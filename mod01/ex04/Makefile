@@ -1,5 +1,5 @@
-NAME = ex01
-SRC = Zombie.cpp ZombieHorde.cpp main.cpp
+NAME = ex04
+SRC = *.cpp
 #DBG = -g -fsanitize=address
 
 

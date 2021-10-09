@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "__config": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
