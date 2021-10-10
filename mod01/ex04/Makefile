@@ -1,5 +1,5 @@
 NAME = ex04
-SRC = *.cpp
+SRC = main.cpp
 #DBG = -g -fsanitize=address
 
 

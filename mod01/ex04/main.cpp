@@ -17,9 +17,32 @@ int main(int argc, char *argv[])
         }
         std::ifstream fin(filename);
         if (fin.fail())
-            std::cout << "Error" << std::endl;
-
-        return 0;
+        {
+            std::cout << std::strerror(errno) << std::endl;
+            return 0;
+        }
+        std::ofstream fout(filenamereplaced);
+        std::string String;
+        while (1)
+        {
+            std::getline(fin, String);
+            int index = String.find(s1);
+            if (index != -1)
+            {
+                String.replace(index, s1.length(), s2);
+                fout << String;
+            }
+            else
+                fout << String;
+            if (fin.eof())
+            {
+                fin.close();
+                fout.close();
+                return 0;
+            }
+            else
+                fout << std::endl;
+        }
     }
     std::cout << "Error" << std::endl;
     return 1;
