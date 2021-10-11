@@ -19,5 +19,15 @@ void Karen::error(void)
 }
 void Karen::complain(std::string level)
 {
-    
+    typedef void (Karen::*function)();
+
+    function fts[4];
+    fts[0] = &Karen::debug;
+    fts[1] = &Karen::info;
+    fts[2] = &Karen::warning;
+    fts[3] = &Karen::error;
+    level == "DEBUG"   ? (this->*fts[0])(): void();
+    level == "INFO"    ? (this->*fts[1])(): void();
+    level == "WARNING" ? (this->*fts[2])(): void();
+    level == "ERROR"   ? (this->*fts[3])(): void();
 }
