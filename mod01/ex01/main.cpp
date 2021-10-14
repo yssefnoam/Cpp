@@ -3,12 +3,12 @@
 
 int main (void)
 {
-    Zombie *zombie = zombieHorde(3, "zombie");
-    // std::cout << "help" << std::endl;
-    zombie->announce();
-    zombie++;
-    zombie->announce();
-    zombie++;
-    zombie->announce();
+    int N = 3;
+    Zombie *zombie = zombieHorde(N, "zombie");
+
+    for (int i = 0; i < N; i++)
+        zombie[i].announce();
+
+    delete [] zombie;
     return 0;
 }
