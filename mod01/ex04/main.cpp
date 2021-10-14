@@ -23,26 +23,23 @@ int main(int argc, char *argv[])
         }
         std::ofstream fout(filenamereplaced);
         std::string String;
-        while (1)
+        std::string write;
+        int index;
+        while (std::getline(fin, String))
         {
-            std::getline(fin, String);
-            int index = String.find(s1);
-            if (index != -1)
+            while ((index = String.find(s1)) != -1)
             {
-                String.replace(index, s1.length(), s2);
-                fout << String;
+                write.append(String, 0, index);
+                write.append(s2);
+                String.erase(0, index + s1.length());
             }
-            else
-                fout << String;
-            if (fin.eof())
-            {
-                fin.close();
-                fout.close();
-                return 0;
-            }
-            else
+            write.append(String, 0, String.length());
+            fout << write;
+            if (!fin.eof())
                 fout << std::endl;
+            write.clear();
         }
+        return 0;
     }
     std::cout << "Error" << std::endl;
     return 1;

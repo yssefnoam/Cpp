@@ -1,4 +1,4 @@
-NAME = ex04
+NAME = replace
 SRC = main.cpp
 #DBG = -g -fsanitize=address
 

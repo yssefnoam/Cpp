@@ -1,4 +1,4 @@
-NAME = ex04
+NAME = Karen
 SRC = main.cpp Karen.cpp
 #DBG = -g -fsanitize=address
 
