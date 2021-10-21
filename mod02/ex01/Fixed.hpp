@@ -20,6 +20,12 @@ public:
     Fixed& operator=(Fixed &other); // Copy assignment operator
 
     // ---- OCCF end ----
+
+    Fixed(const int);
+    Fixed(const float);
+    float   toFloat( void ) const;
+    int toInt( void ) const;
+
     int getRawBits(void) const;
     void setRawBits( int const raw ); 
 };
