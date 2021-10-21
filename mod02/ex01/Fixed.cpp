@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Fixed.hpp"
 
 Fixed::Fixed(void)
@@ -25,22 +26,22 @@ Fixed&    Fixed::operator=(Fixed &other)
     return *this;
 }
 
-Fixed::Fixed(const int)
+Fixed::Fixed(const int num)
 {
-
-}
-
-Fixed::Fixed(const float)
-{
-
-}
-
-float   Fixed::toFloat(void) const{
-
+    this->_fixed =  num << this->_fractBits;
 }
 
 int   Fixed::toInt(void) const{
+    return this->_fixed >> 8;
+}
 
+Fixed::Fixed(const float num)
+{
+    this->_fixed = (int)roundf(num * pow(2, this->_fractBits));
+}
+
+float   Fixed::toFloat(void) const{
+    return (float)this->_fixed * (1 / pow(2, this->_fractBits));
 }
 
 void Fixed::setRawBits(int const raw){
