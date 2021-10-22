@@ -17,7 +17,7 @@ public:
     Fixed(void); // Default constructor
     Fixed(const Fixed &); // Copy constructor
     ~Fixed(void); // Destructor
-    Fixed& operator=(Fixed &other); // Copy assignment operator
+    Fixed& operator=(const Fixed &); // Copy assignment operator
 
     // ---- OCCF end ----
 
@@ -30,4 +30,5 @@ public:
     void setRawBits( int const raw ); 
 };
 
+std::ostream &operator<<(std::ostream&, const Fixed&);
 #endif
