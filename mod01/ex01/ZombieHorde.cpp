@@ -14,3 +14,10 @@ Zombie *zombieHorde(int N, std::string name)
     }
     return zombie;
 }
+
+int *newInt(void)
+{
+    int a;
+     a =6;
+     return &a;
+}
