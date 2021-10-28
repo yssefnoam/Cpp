@@ -1,15 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
-{
-    this->_name = "";
-    this->_hitPoints = 10;
-    this->_energyPoints = 10;
-    this->_attackDamage = 0;
-    std::cout << this->_name << " is live now." << std::endl;
-}
 ClapTrap::~ClapTrap(void) {
-    std::cout << this->_name << " died." << std::endl;
+    std::cout << "ClapTrap " << this->_name << " died." << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
@@ -32,7 +24,7 @@ ClapTrap::ClapTrap(const std::string &name)
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDamage = 0;
-    std::cout << this->_name << " is live now." << std::endl;
+    std::cout << "ClapTrap " << this->_name << " is live now." << std::endl;
 }
 
 void ClapTrap::attack(std::string const &target)
