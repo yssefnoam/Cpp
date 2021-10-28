@@ -11,6 +11,7 @@ protected:
     int _attackDamage;
 
 public:
+    ClapTrap();
     ClapTrap(const ClapTrap&);
     ~ClapTrap();
     ClapTrap& operator=(const ClapTrap&);

@@ -1,5 +1,11 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) {
+    this->_hitPoints = 10;
+    this->_energyPoints = 10;
+    this->_attackDamage = 0;
+    std::cout << "ClapTrap is live now." << std::endl;
+}
 ClapTrap::~ClapTrap(void) {
     std::cout << "ClapTrap " << this->_name << " died." << std::endl;
 }

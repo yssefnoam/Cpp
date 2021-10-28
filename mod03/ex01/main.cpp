@@ -4,11 +4,9 @@
 
 int main(void)
 {
-    ClapTrap ynoam("ynoam");
-    SlaveTrap ynoam2("ynoam");
+    ScavTrap ynoam("ynoam");
 
     ynoam.attack("bamghoug");
-    ynoam.takeDamage(3);
-    ynoam.beRepaired(2);
+    ynoam.guardGate();
     return 0;
 }

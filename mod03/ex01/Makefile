@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = scavtrap
 SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
 #DBG = -g -fsanitize=address
 
