@@ -2,11 +2,11 @@
 
 Cat::Cat(void) {
     this->type = "Cat";
-    std::cout << "Cat class created." << std::endl;
+    this->brain = new Brain();
 }
 
 Cat::~Cat(void) {
-    std::cout << "Cat class died." << std::endl;
+    delete this->brain;
 }
 
 void Cat::makeSound()const{

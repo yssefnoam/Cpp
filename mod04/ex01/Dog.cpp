@@ -2,11 +2,11 @@
 
 Dog::Dog() {
     this->type = "Dog";
-    std::cout << "Dog class created." << std::endl;
+    this->brain = new Brain();
 }
 
 Dog::~Dog() {
-    std::cout << "Dog class died." << std::endl;
+    delete this->brain;
 }
 
 void Dog::makeSound() const{
