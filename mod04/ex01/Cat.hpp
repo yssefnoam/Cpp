@@ -9,6 +9,8 @@ class Cat: public Animal {
         Brain *brain;
 public:
     Cat(void);
+    Cat(const Cat&);
+    Cat& operator=(const Cat&);
     ~Cat(void);
     void makeSound(void)const;
 };

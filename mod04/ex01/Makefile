@@ -1,5 +1,5 @@
-NAME = ex00
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+NAME = ex01
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 #DBG = -g -fsanitize=address
 
 

@@ -11,6 +11,8 @@ public:
 
 public:
     Dog(void);
+    Dog(const Dog&);
+    Dog& operator=(const Dog&);
     ~Dog(void);
     void makeSound(void) const;
 };
