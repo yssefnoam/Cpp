@@ -1,6 +1,6 @@
 NAME = ex01
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
-#DBG = -g -fsanitize=address
+# DBG = -g -fsanitize=address
 
 
 all: $(NAME)
@@ -10,6 +10,7 @@ $(NAME): $(SRC)
 
 clean:
 	rm -fr $(NAME)
+	rm -fr $(NAME).dSYM
 
 fclean: clean
 
