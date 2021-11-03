@@ -13,8 +13,9 @@ public:
     Dog(void);
     Dog(const Dog&);
     Dog& operator=(const Dog&);
-    ~Dog(void);
+    virtual ~Dog(void);
     void makeSound(void) const;
+    Brain* getBrainAddress(void);
 };
 
 #endif

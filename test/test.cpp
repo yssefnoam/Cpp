@@ -1,6 +1,8 @@
 #include <iostream>
+#include "../mod04/ex01/Animal.hpp"
+#include "../mod04/ex01/Dog.hpp"
 
-class Test
+class Test: public Dog
 {
 private:
     int *x;
@@ -32,14 +34,7 @@ public:
 };
 int main(void)
 {
-    Test basic;
-    {
-        std::cout << "----------" << std::endl;
-        Test tmp;
-        std::cout << "----------" << std::endl;
-        tmp = basic;
-        std::cout << "----------" << std::endl;
-    }
-    std::cout << "----------" << std::endl;
+    Animal *pAnimal = new Test();
+    delete pAnimal;
     return (0);
 }

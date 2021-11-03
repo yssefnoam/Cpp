@@ -12,8 +12,9 @@ public:
     Cat(void);
     Cat(const Cat &);
     Cat &operator=(const Cat &);
-    ~Cat(void);
+    virtual ~Cat(void);
     void makeSound(void) const;
+    Brain* getBrainAddress(void);
 };
 
 #endif

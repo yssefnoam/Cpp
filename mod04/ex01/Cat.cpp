@@ -3,22 +3,31 @@
 Cat::Cat(void) {
     this->type = "Cat";
     this->brain = new Brain();
-    std::cout << "Cat class created." << std::endl;
+    std::cout << "Cat class default constructor called." << std::endl;
 }
 Cat::Cat(const Cat &other) {
-    operator=(other);
+    this->type = other.type;
+    std::cout << "Cat class copy constructor called." << std::endl;
+    this->brain = new Brain(*(other.brain));
 }
 
 Cat &Cat::operator=(const Cat &other) {
-    this->brain = other.brain;
+    std::cout << "Cat class assign operator called." << std::endl;
+    this->type = other.type;
+    delete this->brain;
+    this->brain = new Brain(*(other.brain));
     return *this;
 }
 
 Cat::~Cat(void) {
     delete this->brain;
-    std::cout << "Cat class died." << std::endl;
+    std::cout << "Cat class destructor called." << std::endl;
 }
 
-void Cat::makeSound()const{
+void Cat::makeSound() const {
     std::cout << "Miaow." << std::endl;
+}
+
+Brain* Cat::getBrainAddress() {
+    return this->brain;
 }

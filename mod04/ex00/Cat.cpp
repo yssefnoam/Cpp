@@ -2,15 +2,16 @@
 
 Cat::Cat(void) {
     this->type = "Cat";
-    std::cout << "Cat class created." << std::endl;
+    std::cout << "Cat class default constructor called." << std::endl;
 }
 
 Cat::Cat(const Cat &other) {
-    operator=(other);
+    this->type = other.type;
+    std::cout << "Cat class copy constructor called." << std::endl;
 }
 
-Cat &Cat::operator=(Cat &other) {
-    this->brain = other.brain;
+Cat &Cat::operator=(const Cat &other) {
+    this->type = other.type;
     return *this;
 }
 
