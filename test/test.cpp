@@ -1,40 +1,44 @@
 #include <iostream>
-#include "../mod04/ex01/Animal.hpp"
-#include "../mod04/ex01/Dog.hpp"
+#include <stdexcept>
 
-class Test: public Dog
-{
-private:
-    int *x;
+using namespace std;
 
-public:
-    Test(void)
-    {
-        std::cout << "Test()." << std::endl;
-        this->x = new int;
-    }
-    Test& operator=(Test& other)
-    {
-        std::cout << "Test=(Test&)." << std::endl;
-        *(this->x) = *(other.x);
-        return *this;
-    }
-    Test(const Test &other)
-    {
-        std::cout << "Test(Test&)." << std::endl;
-        this->x = new int;
-        *(this->x) = *(other.x);
-        // operator=(other);
-    }
-    ~Test(void)
-    {
-        std::cout << "~Test()." << std::endl;
-        delete this->x;
-    }
+class Device {
+	public:
+		Device(int devno) {
+			if (devno == 2)
+				throw runtime_error("Big problem");
+		}
+		~Device() {} };
+class Broker {
+	public:
+		Broker (int devno1, int devno2) :
+			dev1_(NULL), dev2_(NULL) {
+				try {
+					dev1_ = new Device(devno1);  // Enclose the creation of heap
+
+					dev2_ = new Device(devno2);  // objects in a try block...
+				}
+				catch (...) {
+					delete dev1_;
+					throw;
+				}
+			}
+		~Broker() { delete dev1_;
+			delete dev2_;
+		}
+
+	private: Broker( );
+			 Device* dev1_;
+			 // ...clean up and rethrow if
+			 // something goes wrong.
+			 Device* dev2_;
 };
-int main(void)
-{
-    Animal *pAnimal = new Test();
-    delete pAnimal;
-    return (0);
+
+int main() {
+	try {
+		Broker b(1, 2);
+	}
+	catch(exception& e) {
+		cerr << "Exception: " << e.what() << endl; }
 }
