@@ -1,12 +1,13 @@
 NAME = ex00
 SRC = main.cpp Bureaucrat.cpp
+HEADER = Bureaucrat.hpp
 #DBG = -g -fsanitize=address
-
+FLAG = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	clang++ $(DBG) -Wall -Wextra -Werror -std=c++98 -o $(NAME) $(SRC)
+$(NAME): $(SRC) $(HEADER)
+	clang++ $(DBG) $(FLAG) -o $(NAME) $(SRC)
 
 clean:
 	rm -fr $(NAME)
