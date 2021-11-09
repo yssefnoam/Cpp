@@ -22,12 +22,12 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 
 Bureaucrat::~Bureaucrat(void) {}
 
-int Bureaucrat::getGrade(void) const
+int Bureaucrat::getGrade(void)
 {
     return this->grade;
 }
 
-std::string Bureaucrat::getName(void) const
+std::string Bureaucrat::getName(void)
 {
     return this->name;
 }
@@ -48,10 +48,4 @@ void Bureaucrat::decrementGrade(void)
         throw GradeTooLowException();
     else if (this->grade < 1)
         throw GradeTooHighException();
-}
-
-std::ostream&    operator<<(std::ostream& stream, const Bureaucrat& other)
-{
-    stream << other.getName() << ", bureaucrat grade " << other.getGrade();
-    return stream;
 }
