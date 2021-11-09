@@ -1,6 +1,6 @@
 NAME = ex00
-SRC = main.cpp Bureaucrat.cpp Form.cpp
-HEADERS = Bureaucrat.hpp Form.hpp 
+SRC = main.cpp Bureaucrat.cpp
+HEADERS = Bureaucrat.hpp
 #DBG = -g -fsanitize=address
 FLAG = -Wall -Wextra -Werror -std=c++98
 

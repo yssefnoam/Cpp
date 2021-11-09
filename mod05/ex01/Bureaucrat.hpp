@@ -20,11 +20,12 @@ public:
         const char *what() const throw();
     };
 
-    int getGrade(void);
-    std::string getName(void);
+    int getGrade(void) const;
+    std::string getName(void) const;
 
     void incrementGrade(void);
     void decrementGrade(void);
 };
 
+    std::ostream &operator<<(std::ostream &, const Bureaucrat &);
 #endif /* ----------- end Bureaucrat ------------ */
