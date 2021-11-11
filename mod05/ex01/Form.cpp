@@ -9,12 +9,9 @@ Form::Form(std::string name, int sGrade, int eGrade) : _name(name), _signedGrade
         throw GradeTooHighException();
 }
 
-Form::Form(const Form &other) : _name(other._name), _signedGrade(other._signedGrade), _executedGrade(other._executedGrade)
-{
-    this->_signed = false;
-}
+Form::Form(const Form &other) : _name(other._name), _signedGrade(other._signedGrade), _executedGrade(other._executedGrade) { this->_signed = false; }
 
-Form& Form::operator=(const Form &other)
+Form &Form::operator=(const Form &other)
 {
     if (this != &other)
         this->_signed = other._signed;
@@ -23,46 +20,30 @@ Form& Form::operator=(const Form &other)
 
 Form::~Form(void) {}
 
-const char *Form::GradeTooLowException::what() const throw()
-{
-    return "Form GradeTooLowException";
-}
+const char *Form::GradeTooLowException::what() const throw() { return "Form GradeTooLowException"; }
 
-const char *Form::GradeTooHighException::what() const throw()
-{
-    return "Form GradeTooHighException";
-}
+const char *Form::GradeTooHighException::what() const throw() { return "Form GradeTooHighException"; }
 
-std::string Form::getName(void) const {
-    return this->_name;
-}
+std::string Form::getName(void) const { return this->_name; }
 
-int Form::getSigneGrade(void) const {
-    return this->_signedGrade;
-}
+int Form::getSigneGrade(void) const { return this->_signedGrade; }
 
-int Form::getExecuteGrade(void) const {
-    return this->_executedGrade;
-}
+int Form::getExecuteGrade(void) const { return this->_executedGrade; }
 
-bool Form::getSigned(void) const {
-    return this->_signed;
-}
+bool Form::getSigned(void) const { return this->_signed; }
 
 void Form::beSigned(const Bureaucrat &reference)
 {
-    if (reference.getGrade() > 150)
+    if (reference.getGrade() >= this->getSigneGrade())
         throw GradeTooLowException();
-    else if (reference.getGrade() < 1)
-        throw GradeTooHighException();
-    this->_signed = true;
+    
 }
 
 std::ostream &operator<<(std::ostream &stream, const Form &other)
 {
-    stream << "Form " << other.getName()
-    << ", signed grade " << other.getSigneGrade()
-    << ", executed grade " << other.getExecuteGrade()
-    << ", signe state " << (other.getSigned() ? "true.": "false.");
+    stream << "Form " << other.getName();
+    stream << ", signed grade " << other.getSigneGrade();
+    stream << ", executed grade " << other.getExecuteGrade();
+    stream << ", signe state " << (other.getSigned() ? "true." : "false.");
     return stream;
 }

@@ -29,5 +29,6 @@ public:
     void decrementGrade(void);
 };
 
-    std::ostream &operator<<(std::ostream &, const Bureaucrat &);
+std::ostream &operator<<(std::ostream &, const Bureaucrat &);
+
 #endif /* ----------- end Bureaucrat ------------ */

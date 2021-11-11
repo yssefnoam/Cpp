@@ -4,8 +4,8 @@ int main(void)
 {
     try{
         Bureaucrat b("Test", 150);
+        std::cout << b << "." << std::endl;
         b.decrementGrade();
-        // std::cout << b << "." << std::endl;
     }
     catch (std::exception &e)
     {
