@@ -3,9 +3,9 @@
 Form::Form(std::string name, int sGrade, int eGrade) : _name(name), _signedGrade(sGrade), _executedGrade(eGrade)
 {
     this->_signed = false;
-    if (eGrade > 150)
+    if (sGrade > 150)
         throw GradeTooLowException();
-    else if (eGrade < 1)
+    else if (sGrade < 1)
         throw GradeTooHighException();
 }
 
@@ -34,9 +34,16 @@ bool Form::getSigned(void) const { return this->_signed; }
 
 void Form::beSigned(const Bureaucrat &reference)
 {
-    if (reference.getGrade() >= this->getSigneGrade())
+    if (reference.getGrade() > this->getSigneGrade())
+    {
+        reference.signForm(*this);
         throw GradeTooLowException();
-    
+    }
+    else
+    {
+        this->_signed = true;
+        reference.signForm(*this);
+    }
 }
 
 std::ostream &operator<<(std::ostream &stream, const Form &other)

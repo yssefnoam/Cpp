@@ -2,6 +2,8 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+// class Form;
 
 class Bureaucrat /* ------------- start Bureaucrat --------- */
 {
@@ -28,7 +30,7 @@ public:
     void incrementGrade(void);
     void decrementGrade(void);
 
-    void    signForm()
+    void    signForm(const Form &) const;
     
 };
 
