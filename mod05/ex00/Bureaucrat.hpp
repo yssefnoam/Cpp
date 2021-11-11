@@ -10,6 +10,8 @@ class Bureaucrat /* ------------- start Bureaucrat --------- */
 
 public:
     Bureaucrat(std::string, int);
+    Bureaucrat(const Bureaucrat&);
+    Bureaucrat& operator=(const Bureaucrat&);
     ~Bureaucrat(void);
 
     class GradeTooLowException : public std::exception {

@@ -10,6 +10,8 @@ class Bureaucrat /* ------------- start Bureaucrat --------- */
 
 public:
     Bureaucrat(std::string, int);
+    Bureaucrat(const Bureaucrat&);
+    Bureaucrat& operator=(const Bureaucrat&);
     ~Bureaucrat(void);
 
     class GradeTooLowException : public std::exception {
@@ -25,7 +27,10 @@ public:
 
     void incrementGrade(void);
     void decrementGrade(void);
+
+    
 };
 
-    std::ostream &operator<<(std::ostream &, const Bureaucrat &);
+std::ostream &operator<<(std::ostream &, const Bureaucrat &);
+
 #endif /* ----------- end Bureaucrat ------------ */

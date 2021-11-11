@@ -1,44 +1,17 @@
 #include <iostream>
 #include <stdexcept>
 
-using namespace std;
+const char *ft_function(void)
+{
+	std::string s("hello world.");
 
-class Device {
-	public:
-		Device(int devno) {
-			if (devno == 2)
-				throw runtime_error("Big problem");
-		}
-		~Device() {} };
-class Broker {
-	public:
-		Broker (int devno1, int devno2) :
-			dev1_(NULL), dev2_(NULL) {
-				try {
-					dev1_ = new Device(devno1);  // Enclose the creation of heap
+	return s.c_str();
+}
 
-					dev2_ = new Device(devno2);  // objects in a try block...
-				}
-				catch (...) {
-					delete dev1_;
-					throw;
-				}
-			}
-		~Broker() { delete dev1_;
-			delete dev2_;
-		}
-
-	private: Broker( );
-			 Device* dev1_;
-			 // ...clean up and rethrow if
-			 // something goes wrong.
-			 Device* dev2_;
-};
-
-int main() {
-	try {
-		Broker b(1, 2);
-	}
-	catch(exception& e) {
-		cerr << "Exception: " << e.what() << endl; }
+int main(void)
+{
+	const char *str;
+	str = ft_function();
+	std::cout << str << std::endl;
+	return (0);
 }
