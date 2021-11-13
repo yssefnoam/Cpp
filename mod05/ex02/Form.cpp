@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, int sGrade, int eGrade, std::string target) : _name(name), _signedGrade(sGrade), _executedGrade(eGrade), _target(target)
+Form::Form(std::string name, int sGrade, int eGrade) : _name(name), _signedGrade(sGrade), _executedGrade(eGrade)
 {
     this->_signed = false;
     if (sGrade > 150)
@@ -9,7 +9,7 @@ Form::Form(std::string name, int sGrade, int eGrade, std::string target) : _name
         throw GradeTooHighException();
 }
 
-Form::Form(const Form &other) : _name(other._name), _signedGrade(other._signedGrade), _executedGrade(other._executedGrade), _target(other._target) { this->_signed = false; }
+Form::Form(const Form &other) : _name(other._name), _signedGrade(other._signedGrade), _executedGrade(other._executedGrade) { this->_signed = false; }
 
 Form &Form::operator=(const Form &other)
 {
@@ -31,8 +31,6 @@ int Form::getExecuteGrade(void) const { return this->_executedGrade; }
 
 bool Form::getSigned(void) const { return this->_signed; }
 
-std::string Form::getTarget(void) const { return this->_target; }
-
 void Form::beSigned(const Bureaucrat &reference)
 {
     if (reference.getGrade() > this->getSigneGrade())
@@ -53,6 +51,5 @@ std::ostream &operator<<(std::ostream &stream, const Form &other)
     stream << ", signed grade " << other.getSigneGrade();
     stream << ", executed grade " << other.getExecuteGrade();
     stream << ", signe state " << (other.getSigned() ? "true." : "false.");
-    stream << ", target " << other.getTarget();
     return stream;
 }
