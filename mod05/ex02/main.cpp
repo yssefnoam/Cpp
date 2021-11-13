@@ -6,9 +6,6 @@ int main(void)
     try{
         Bureaucrat b("bName", 2);
         std::cout << b << std::endl;
-        Form f("fName", 1, 20);
-        std::cout << f << std::endl;
-        f.beSigned(b);
     }
     catch (std::exception &e)
     {

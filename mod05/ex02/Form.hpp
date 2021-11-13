@@ -12,9 +12,10 @@ private:
     bool _signed;
     const int _signedGrade;
     const int _executedGrade;
+    std::string _target;
 
 public:
-    Form(std::string, int, int);
+    Form(std::string, int, int, std::string);
     Form(const Form&);
     Form& operator=(const Form&);
     ~Form(void);
@@ -31,8 +32,10 @@ public:
     int getSigneGrade(void) const;
     int getExecuteGrade(void) const;
     bool getSigned(void) const;
+    std::string getTarget(void) const;
 
     void    beSigned(const Bureaucrat&);
+    virtual void    execute(Bureaucrat const &) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &, const Form &);

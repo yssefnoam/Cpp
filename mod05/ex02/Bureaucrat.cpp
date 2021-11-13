@@ -68,6 +68,10 @@ void Bureaucrat::signForm(const Form &form) const
         std::cout << this->getName() << " cannot signs " << form.getName() << " because the grade of " << this->getName() << " is low." << std::endl;
 }
 
+void    Bureaucrat::executeForm(Form const &form)
+{
+}
+
 std::ostream& operator<<(std::ostream &stream, const Bureaucrat &other)
 {
     stream << "Bureaucrat " << other.getName() << ", bureaucrat grade " << other.getGrade();
