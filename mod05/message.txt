@@ -1,0 +1,83 @@
+void    tree_one(std::ofstream&    outfile)
+{       
+    outfile << "       /\\      \n";
+    outfile << "      /\\*\\     \n";
+    outfile << "     /\\O\\*\\    \n";
+    outfile << "    /*/\\/\\/\\   \n";
+    outfile << "   /\\O\\/\\*\\/\\  \n";
+    outfile << "  /\\*\\/\\*\\/\\/\\ \n";
+    outfile << " /\\O\\/\\/*/\\/O/\\\n";
+    outfile << "       ||      \n";
+    outfile << "       ||      \n";
+    outfile << "       ||      \n";
+}
+
+void    tree_two(std::ofstream&    outfile)
+{
+    outfile << "         v" << std::endl;
+    outfile << "        >X<" << std::endl;
+    outfile << "         A" << std::endl;
+    outfile << "        d$b" << std::endl;
+    outfile << "      .d\\$$b." << std::endl;
+    outfile << "    .d$i$$\\$$b." << std::endl;
+    outfile << "       d$$@b" << std::endl;
+    outfile << "      d\\$$$ib" << std::endl;
+    outfile << "    .d$$$\\$$$b" << std::endl;
+    outfile << "  .d$$@$$$$\\$$ib." << std::endl;
+    outfile << "      d$$i$$b" << std::endl;
+    outfile << "     d\\$$$$@$b" << std::endl;
+    outfile << "  .d$@$$\\$$$$$@b." << std::endl;
+    outfile << ".d$$$$i$$$\\$$$$$$b." << std::endl;
+    outfile << "        ###" << std::endl;
+    outfile << "        ###" << std::endl;
+    outfile << "        ###" << std::endl;
+}
+
+void    tree_three(std::ofstream&    outfile)
+{
+    outfile << "             /\\" << std::endl;
+    outfile << "            <  >" << std::endl;
+    outfile << "             \\/" << std::endl;
+    outfile << "             /\\" << std::endl;
+    outfile << "            /  \\" << std::endl;
+    outfile << "           /++++\\" << std::endl;
+    outfile << "          /  ()  \\" << std::endl;
+    outfile << "          /      \\" << std::endl;
+    outfile << "         /~`~`~`~`\\" << std::endl;
+    outfile << "        /  ()  ()  \\" << std::endl;
+    outfile << "        /          \\" << std::endl;
+    outfile << "       /*&*&*&*&*&*&\\" << std::endl;
+    outfile << "      /  ()  ()  ()  \\" << std::endl;
+    outfile << "      /              \\" << std::endl;
+    outfile << "     /++++++++++++++++\\" << std::endl;
+    outfile << "    /  ()  ()  ()  ()  \\" << std::endl;
+    outfile << "    /                  \\" << std::endl;
+    outfile << "   /~`~`~`~`~`~`~`~`~`~`\\" << std::endl;
+    outfile << "  /  ()  ()  ()  ()  ()  \\" << std::endl;
+    outfile << "  /*&*&*&*&*&*&*&*&*&*&*&\\" << std::endl;
+    outfile << " /                        \\" << std::endl;
+    outfile << "/,.,.,.,.,.,.,.,.,.,.,.,.,.\\" << std::endl;
+    outfile << "           |   |" << std::endl;
+    outfile << "          |`````|" << std::endl;
+    outfile << "          \\_____/" << std::endl;
+}
+
+void    tree_four(std::ofstream&    outfile)
+{
+    outfile << "          .     .  .      +     .      .          ." << std::endl;
+    outfile << "    .       .      .     #       .           ." << std::endl;
+    outfile << "       .      .         ###            .      .      ." << std::endl;
+    outfile << "     .      .   \"#:. .:##\"##:. .:#\"  .      ." << std::endl;
+    outfile << "         .      . \"####\"###\"####\"  ." << std::endl;
+    outfile << "      .     \"#:.    .:#\"###\"#:.    .:#\"  .        .       ." << std::endl;
+    outfile << " .             \"#########\"#########\"        .        ." << std::endl;
+    outfile << "       .    \"#:.  \"####\"###\"####\"  .:#\"   .       ." << std::endl;
+    outfile << "    .     .  \"#######\"\"##\"##\"\"#######\"                  ." << std::endl;
+    outfile << "               .\"##\"#####\"#####\"##\"           .      ." << std::endl;
+    outfile << "   .   \"#:. ...  .:##\"###\"###\"##:.  ... .:#\"     ." << std::endl;
+    outfile << "     .     \"#######\"##\"#####\"##\"#######\"      .     ." << std::endl;
+    outfile << "   .    .     \"#####\"\"#######\"\"#####\"    .      ." << std::endl;
+    outfile << "           .     \"      000      \"    .     ." << std::endl;
+    outfile << "      .         .   .   000     .        .       ." << std::endl;
+    outfile << ". .. ..................O000O........................ ...... ..." << std::endl;
+}
