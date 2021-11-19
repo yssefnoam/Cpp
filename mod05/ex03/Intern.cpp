@@ -27,9 +27,11 @@ Form *Intern::newForm(int i, std::string target)
 
 Form *Intern::makeForm(std::string formName, std::string target)
 {
-    std::string forms[3] = {"robotomy request",
-                            "shrubbery creation",
-                            "presidential pardon",};
+    std::string forms[3] = {
+        "robotomy request",
+        "shrubbery creation",
+        "presidential pardon",
+    };
 
     for (int i = 0; i < 3; i++)
         if (formName == forms[i])

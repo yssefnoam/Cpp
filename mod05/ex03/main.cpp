@@ -9,10 +9,10 @@ int main(void)
 {
     try
     {
-        Bureaucrat b("bName", 120);
+        Bureaucrat b("bName", 1);
         Intern someRandomIntern;
         Form *rrf;
-        rrf = someRandomIntern.makeForm("robotomy reques", "Bender");
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
         if (rrf)
         {
             rrf->beSigned(b);
