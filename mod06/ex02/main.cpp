@@ -31,48 +31,36 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-	try
-	{
+	try {
 		Base &tmp = dynamic_cast<A &>(p);
 		static_cast<void>(tmp);
 		std::cout << "A" << std::endl;
 		return;
 	}
-	catch (...)
-	{
-	}
-	try
-	{
+	catch (...) { }
+	try {
 		Base &tmp = dynamic_cast<B &>(p);
 		static_cast<void>(tmp);
 		std::cout << "B" << std::endl;
 		return;
 	}
-	catch (...)
-	{
-	}
-	try
-	{
+	catch (...) { }
+	try {
 		Base &tmp = dynamic_cast<C &>(p);
 		static_cast<void>(tmp);
 		std::cout << "C" << std::endl;
 		return;
 	}
-	catch (...)
-	{
-	}
+	catch (...) { }
 }
 
 int main(void)
 {
-	identify(generate());
+	Base *ptr = generate();
+	identify(ptr);
 
-	Base &a = A();
-	identify(a);
-	B &b = B();
-	identify(b);
-	C &c = C();
-	identify(c);
+	Base &address = *(generate());
+	identify(address);
 
 	return 0;
 }

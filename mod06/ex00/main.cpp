@@ -4,14 +4,14 @@ int main(int ac, char *av[])
 {
     if (ac != 2)
     {
-        std::cerr << "Error: the programe needs 2 parameters." << std::endl;
+        std::cerr << "Error: the programe needs 1 parameters." << std::endl;
         return 0;
     }
     std::string string = av[1];
     try
     {
         int num = std::stoi(string);
-        if (num >= 32 && num <= 127)
+        if (std::isprint(num))
             std::cout << "char : " << "'" << static_cast<char>(num) << "'" << std::endl;
         else
             std::cout << "char : " << "Non displayable" << std::endl;
