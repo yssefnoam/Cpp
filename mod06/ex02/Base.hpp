@@ -3,7 +3,10 @@
 
 class Base
 {
-    public:
+public:
+    Base();
+    Base(const Base &);
+    Base &operator=(const Base &);
     virtual ~Base();
 };
 

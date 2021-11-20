@@ -1,6 +1,6 @@
 NAME = ex02
-SRC = main.cpp
-HEADERS = 
+SRC = main.cpp Base.cpp A.cpp C.cpp B.cpp
+HEADERS = Base.hpp A.hpp C.hpp B.hpp
 #DBG = -g -fsanitize=address
 FLAG = -Wall -Wextra -Werror -std=c++98
 
