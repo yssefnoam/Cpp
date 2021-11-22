@@ -4,7 +4,7 @@ ClapTrap::~ClapTrap(void) {
     std::cout << this->_name << " died." << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
+ClapTrap& ClapTrap::operator=(const ClapTrap &copy)
 {
     this->_name = copy._name;
     this->_hitPoints = copy._hitPoints;

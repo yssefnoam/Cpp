@@ -1,11 +1,16 @@
-// #include <bits/stdc++.h>
 #include <iostream>
-using namespace std;
+#include "/Users/ynoam/debug.h"
+#include <typeinfo>
 
-void my_callback(void* x) {
-    std::cout << "the value is: " << reinterpret_cast<long>(x); // will probably compile
-}
+#include <vector>
 
-int main()
-{
+struct Base{
+  int a;
+  int b;
+  char c;
+};
+std::vector<int>testA;
+
+int main () {
+  return 0;
 }
