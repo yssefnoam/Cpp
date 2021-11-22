@@ -27,14 +27,11 @@ int main(void)
     std::cout << reinterpret_cast<uintptr_t>(&data) << std::endl;
 
     std::cout << *(reinterpret_cast<int*>(address)) <<  std::endl;
-    address += 4;
-    std::cout << *(reinterpret_cast<int*>(address)) <<  std::endl;
-    address += 4;
-    std::cout << *(reinterpret_cast<char*>(address)) <<  std::endl;
+    std::cout << *(reinterpret_cast<int*>(address + 4)) <<  std::endl;
+    std::cout << *(reinterpret_cast<char*>(address + 8)) <<  std::endl;
 
     std::cout << "--------------------" <<  std::endl;
-    uintptr_t newAddress = serialize(&data);
-    Data *ptr = deserialize(newAddress);
+    Data *ptr = deserialize(address);
     std::cout << ptr->a <<  std::endl;
     std::cout << ptr->b <<  std::endl;
     std::cout << ptr->c <<  std::endl;
