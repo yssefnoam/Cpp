@@ -1,16 +1,7 @@
 #include <iostream>
-#include "/Users/ynoam/debug.h"
-#include <typeinfo>
-
-#include <vector>
-
-struct Base{
-  int a;
-  int b;
-  char c;
-};
-std::vector<int>testA;
 
 int main () {
+  int a[3];
+  std::cout << a[3] << std::endl;
   return 0;
 }

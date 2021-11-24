@@ -56,5 +56,6 @@ int main(int ac, char *av[])
     catch (...) {
         std::cout << "double : " << "nan" << std::endl;
     }
+    std::cout << (0/1) << std::endl;
     return 0;
 }
