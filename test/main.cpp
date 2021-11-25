@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main () {
-  int a[3];
-  std::cout << a[3] << std::endl;
+  std::string *a = new std::string[0];
+  for(int i = 0; i < 4 ;i++)
+  std::cout << a[i] ;
   return 0;
+
 }

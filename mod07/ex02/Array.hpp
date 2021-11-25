@@ -6,25 +6,56 @@ class Array
 {
 private:
     T *array;
-    size_t size;
+    size_t _size;
 
 public:
     Array()
     {
-        this->size = 0;
+        array = NULL;
+        this->_size = 0;
     };
     Array(unsigned int n)
     {
-        this->array = new T[n];
-        this->size = n;
+        this->_size = n;
+        this->array = new T[this->_size];
+        for (size_t i = 0; i < n; i++)
+            array[i] = T();
     }
-    Array(const Array &)
+    Array(const Array &other)
     {
+        this->_size = other._size;
+        this->array = new T[this->_size];
+        for (size_t i = 0; i < this->_size; i++)
+            array[i] = other.array[i];
     }
-    Array& operator=(const Array &)
+    Array &operator=(const Array &other)
     {
+        delete[] array;
+        this->_size = other._size;
+        this->array = new T[this->_size];
+        for (size_t i = 0; i < this->_size; i++)
+            array[i] = other.array[i];
     }
-    ~Array() {delete [] array;}
+    T &operator[](size_t index) const
+    {
+        if (index > this->_size)
+            throw OutOfLimits();
+        return array[index];
+    }
+    ~Array() { delete[] array; }
+
+    size_t size()
+    {
+        return this->_size;
+    }
+
+    class OutOfLimits : public std::exception
+    {
+        const char *what() const throw()
+        {
+            return "index out of limits";
+        }
+    };
 };
 
 #endif
