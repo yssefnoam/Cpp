@@ -35,6 +35,7 @@ public:
         this->array = new T[this->_size];
         for (size_t i = 0; i < this->_size; i++)
             array[i] = other.array[i];
+        return *this;
     }
     T &operator[](size_t index) const
     {

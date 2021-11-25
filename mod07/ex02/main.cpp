@@ -12,13 +12,17 @@ int main(void)
         //     a = "i";
         // }
         Array<int> array(10);
+        Array<int> array2(10);
         for(int i=0; i< 10; i++)
         {
             int &a = array[i];
-            a = i;
+            int &b = array2[i];
+            a = 0;
+            b = i + 1;
         }
+        array2 = array;
         for(int i=0; i< 10; i++)
-            std::cout << array[i] << std::endl;
+            std::cout << array2[i] << std::endl;
     }
     catch(std::exception &e)
     {
