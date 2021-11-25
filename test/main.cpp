@@ -1,11 +1,7 @@
-// #include <bits/stdc++.h>
 #include <iostream>
-using namespace std;
 
-void my_callback(void* x) {
-    std::cout << "the value is: " << reinterpret_cast<long>(x); // will probably compile
-}
-
-int main()
-{
+int main () {
+  int a[3];
+  std::cout << a[3] << std::endl;
+  return 0;
 }

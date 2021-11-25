@@ -8,8 +8,8 @@ int main(int ac, char *av[])
         return 0;
     }
     std::string string = av[1];
-    try
-    {
+    // ------------- CHAR ----------------
+    try {
         int num = std::stoi(string);
         if (std::isprint(num))
             std::cout << "char : " << "'" << static_cast<char>(num) << "'" << std::endl;
@@ -20,8 +20,8 @@ int main(int ac, char *av[])
         std::cout << "char : " << "impossible" << std::endl;
     }
 
-    try
-    {
+    // ------------- INT ----------------
+    try {
         int num = std::stoi(string);
         std::cout << "int : " << num << std::endl;
     }
@@ -29,6 +29,7 @@ int main(int ac, char *av[])
         std::cout << "int : " << "impossible" << std::endl;
     }
 
+    // ------------- FLOAT ----------------
     try
     {
         float num = std::stof(string);
@@ -42,6 +43,7 @@ int main(int ac, char *av[])
         std::cout << "float : " << "nanf" << std::endl;
     }
 
+    // ------------- DOUBLE ----------------
     try
     {
         double num = std::stod(string);
@@ -54,5 +56,6 @@ int main(int ac, char *av[])
     catch (...) {
         std::cout << "double : " << "nan" << std::endl;
     }
+    std::cout << (0/1) << std::endl;
     return 0;
 }
