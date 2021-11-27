@@ -2,21 +2,14 @@
 #define EASY_FIND_HPP
 
 #include <iostream>
-
-class Error : std::exception
-{
-public:
-    const char *what()const throw() { return "No occurrence find"; }
-};
+#include <algorithm>
 
 template <typename T>
-void easyfind(T container, int f)
+bool easyfind(T container, int f)
 {
-    T::iterator it;
-    it = container.find(f);
-    if (it == container.end())
-        throw Error();
-    std::cout << *it << std::endl;
+    if(*(std::find(container.begin(), container.end(), f)) == f)
+        return true;
+    return false;
 }
 
 #endif /* end EASY_FIND_HPP */
