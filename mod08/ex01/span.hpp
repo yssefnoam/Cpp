@@ -23,6 +23,14 @@ class Span{
 		{
 		const char *what() const throw();
 		};
+		void print()
+		{
+			for(std::vector<int>::iterator it = this->v.begin(); it != this->v.end(); it++)
+			{
+				std::cout << *it << std::endl;
+			}
+
+		}
 };
 
 #endif
